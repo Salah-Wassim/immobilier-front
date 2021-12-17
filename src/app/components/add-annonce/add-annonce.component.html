@@ -1,0 +1,66 @@
+<h1>Ajouter Annonce</h1>
+<form [formGroup]="annonceForm" (ngSubmit)="submit()">
+    <mat-form-field>
+        <mat-label>Titre</mat-label>
+        <input matInput formControlName="title" type="text" id="title" required>
+        <mat-error>Required</mat-error>
+    </mat-form-field><br>
+    <mat-form-field>
+        <mat-label>Prix</mat-label>
+        <input matInput formControlName="price" type="text" id="price" required>
+        <mat-error>Required</mat-error>
+    </mat-form-field><br>
+    <mat-form-field>
+        <mat-label>Secteur</mat-label>
+        <input matInput formControlName="secteur" type="text" id="secteur" required>
+        <mat-error>Required</mat-error>
+    </mat-form-field><br>
+    <mat-form-field>
+        <mat-label>Nombre de pièce</mat-label>
+        <input matInput formControlName="nbRoom" type="text" id="nbRoom" required>
+        <mat-error></mat-error>
+    </mat-form-field><br>
+    <mat-form-field>
+        <mat-label>Description</mat-label>
+        <input matInput formControlName="description" type="text" id="description" required>
+        <mat-error></mat-error>
+    </mat-form-field><br>
+    <mat-form-field>
+        <mat-label>Image</mat-label>
+        <input matInput formControlName="picture" type="text" id="picture">
+        <mat-error></mat-error>
+    </mat-form-field><br>
+    <mat-form-field appearance="outline">
+        <mat-label>Agent Immobilier</mat-label>
+        <mat-select formControlName="agentImmobilier">
+            <mat-option *ngFor="let agentImmobilier of agentImmobiliers" [value]="agentImmobilier.name">
+                {{ agentImmobilier.name }}
+            </mat-option>
+        </mat-select>
+    </mat-form-field><br>
+    <mat-form-field appearance="outline">
+        <mat-label>Type de bien</mat-label>
+        <mat-select formControlName="biens">
+            <mat-option *ngFor="let bien of biens" [value]="bien.name">
+                {{ bien.name }}
+            </mat-option>
+        </mat-select>
+    </mat-form-field><br>
+    <mat-form-field appearance="outline">
+        <mat-label>Avantage</mat-label>
+        <mat-select formControlName="avantage">
+            <mat-option *ngFor="let avantage of avantages" [value]="avantage.name">
+                {{ avantage.name }}
+            </mat-option>
+        </mat-select>
+    </mat-form-field><br>
+    <mat-form-field appearance="outline">
+        <mat-label>Mots clés</mat-label>
+        <mat-select formControlName="keyWord">
+            <mat-option *ngFor="let keyword of keywords" [value]="keyword.name">
+                {{ keyword.name }}
+            </mat-option>
+        </mat-select>
+    </mat-form-field><br>
+    <button type="submit" [disabled]="!annonceForm.valid">Publier</button>
+</form>

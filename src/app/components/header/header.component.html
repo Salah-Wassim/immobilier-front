@@ -1,0 +1,7 @@
+<button mat-button [matMenuTriggerFor]="menu">Menu</button>
+<mat-menu #menu="matMenu">
+    <button mat-menu-item [routerLink]="['/']" routerLinkActive="router-link-active">Home</button>
+    <button mat-menu-item [routerLink]="['/login']" routerLinkActive="router-link-active">Se connecter</button>
+    <button mat-menu-item [routerLink]="['/add-annonces']" routerLinkActive="router-link-active">Creer une annonce</button>
+    <button mat-menu-item [routerLink]="['/add-realtors']" routerLinkActive="router-link-active">Ajouter un agent immobilier</button>
+</mat-menu>

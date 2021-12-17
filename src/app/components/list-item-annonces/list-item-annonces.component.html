@@ -1,0 +1,10 @@
+<mat-card>
+    <mat-card-title>
+        {{ annonce.title }}
+    </mat-card-title>
+    <mat-card-content>
+        {{ annonce.picture }}
+        <p>{{ annonce.price }} euros</p> 
+    </mat-card-content>
+    <button [routerLink]="['/detail', annonce.id]">En savoir plus</button>
+</mat-card>

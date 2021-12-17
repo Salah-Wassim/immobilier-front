@@ -1,0 +1,42 @@
+<h1>Ajouter un agent immobilier</h1>
+<form [formGroup]="realtorForm" (ngSubmit)="submit()">
+    <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name" type="text" id="name" required>
+        <mat-error>Required</mat-error>
+    </mat-form-field><br>
+    <mat-form-field>
+        <mat-label>age</mat-label>
+        <input matInput formControlName="age" type="text" id="age" required>
+        <mat-error>Required</mat-error>
+    </mat-form-field><br>
+    <mat-form-field>
+        <mat-label>email</mat-label>
+        <input matInput formControlName="email" type="text" id="email" required>
+        <mat-error>Required</mat-error>
+    </mat-form-field><br>
+    <mat-form-field>
+        <mat-label>Mot de passe</mat-label>
+        <input matInput formControlName="password" type="text" id="password" required>
+        <mat-error>Required</mat-error>
+    </mat-form-field><br>
+    <mat-form-field>
+        <mat-label>Image</mat-label>
+        <input matInput formControlName="picture" type="text" id="picture">
+    </mat-form-field><br>
+    <mat-form-field>
+        <mat-label>Numéro de téléphone</mat-label>
+        <input matInput formControlName="phoneNumber" type="text" id="phoneNumber" required>
+        <mat-error>Required</mat-error>
+    </mat-form-field><br>
+    <mat-label>Role Admin: </mat-label>
+    <mat-radio-group formControlName="roleAdmin" required>
+        <mat-radio-button [value]="true">
+            1
+        </mat-radio-button>
+        <mat-radio-button [value]="false">
+            0
+        </mat-radio-button>
+    </mat-radio-group><br>
+    <button type="submit" [disabled]="!realtorForm.valid">Publier</button>
+</form>
