@@ -13,13 +13,18 @@ export class ListRealtorComponent implements OnInit {
   constructor(private realtorService: RealtorService) { }
 
   ngOnInit(): void {
-    this.getAgentImmobiliers();
+    this.getAgentImmobilier();
   }
 
-  getAgentImmobiliers(): void{
+  getAgentImmobilier(): void{
     this.realtorService.getAgentImmobilier()
     .then(agentImmobiliers => {this.agentImmobiliers = agentImmobiliers})
     .catch(err => console.log(err))
   }
 
+  delete(id:number): void{
+    this.realtorService.getDeleteAgentImmobilier(id)
+    .then(() => {this.getAgentImmobilier()})
+    .catch(err => console.log(err))
+  }
 }

@@ -1,3 +1,4 @@
 <div *ngFor="let agentImmobilier of agentImmobiliers">
-    {{ agentImmobilier.name | uppercase}}
+    {{ agentImmobilier.name }}
+    <button mat-button (click)="delete(agentImmobilier.id)" >Delete</button>
 </div>

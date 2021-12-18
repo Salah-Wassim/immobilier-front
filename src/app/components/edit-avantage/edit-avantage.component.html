@@ -1,0 +1,9 @@
+<h1>Editer un avantage</h1>
+<form [formGroup]="avantageForm" (ngSubmit)="submit()">
+    <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name" type="text" id="name" required>
+        <mat-error>Required</mat-error>
+    </mat-form-field><br>
+    <button mat-button type="submit" [disabled]="!avantageForm.valid">Editer</button>
+</form>

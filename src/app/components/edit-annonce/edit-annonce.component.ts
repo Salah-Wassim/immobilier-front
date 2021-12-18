@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AnnonceService } from 'src/app/shared/service/annonce.service';
 import { AvantageService } from 'src/app/shared/service/avantage.service';
 import { BienService } from 'src/app/shared/service/bien.service';
@@ -8,11 +8,17 @@ import { KeywordService } from 'src/app/shared/service/keyword.service';
 import { RealtorService } from 'src/app/shared/service/realtor.service';
 
 @Component({
-  selector: 'app-add-annonce',
-  templateUrl: './add-annonce.component.html',
-  styleUrls: ['./add-annonce.component.css']
+  selector: 'app-edit-annonce',
+  templateUrl: './edit-annonce.component.html',
+  styleUrls: ['./edit-annonce.component.css']
 })
-export class AddAnnonceComponent implements OnInit {
+export class EditAnnonceComponent implements OnInit {
+
+  id: number = 0;
+  biens: any = [];
+  avantages: any = [];
+  keywords: any = [];
+  agentImmobiliers: any = [];
 
   annonceForm = this.fb.group({
     title: ['', Validators.required],
@@ -21,24 +27,33 @@ export class AddAnnonceComponent implements OnInit {
     nbRoom: ['', Validators.required],
     description: ['', Validators.required],
     keyWord: ['', Validators.required],
-    picture: [''],
+    picture: ['', Validators.required],
     agentImmobilier: ['', Validators.required],
     biens: ['', Validators.required],
     avantage: ['', Validators.required],
   })
 
-  constructor(private router: Router, private fb:FormBuilder, private annonceService: AnnonceService,private bienService: BienService, private avantageService: AvantageService, private keywordService: KeywordService, private realtorService: RealtorService) { }
-
-  biens: any = [];
-  avantages: any = [];
-  keywords: any = [];
-  agentImmobiliers: any = [];
+  constructor(private fb: FormBuilder, private route: ActivatedRoute, private router: Router, private annonceService: AnnonceService, private bienService: BienService, private avantageService: AvantageService, private keywordService: KeywordService, private realtorService: RealtorService) {
+    this.route.params
+    .subscribe( params => {
+      this.id = params['id']
+    })
+  }
 
   ngOnInit(): void {
+    this.getOneAnnonce()
     this.getBiens()
     this.getAvantages()
     this.getKeyword()
     this.getAgentImmobilier()
+  }
+
+  getOneAnnonce(): void{
+    this.annonceService.getOneAnnonce(this.id)
+    .then(annonce => {
+      this.annonceForm.patchValue(annonce)
+    })
+    .catch(err => console.log(err))
   }
 
   getBiens():void{
@@ -66,10 +81,10 @@ export class AddAnnonceComponent implements OnInit {
   }
 
   submit(): void{
-    this.annonceService.getAddAnnonce(this.annonceForm.value)
+    this.annonceService.getEditAnnonce(this.annonceForm.value, this.id)
     .then(() => {
-      this.router.navigate(['/']);
+      this.router.navigate([''])
     })
-    .catch(err => console.log(err));
+    .catch(err => console.log(err))
   }
 }

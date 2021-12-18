@@ -1,3 +1,14 @@
 <div *ngFor="let annonce of annonces">
-    <app-list-item-annonces [annonce]="annonce"></app-list-item-annonces>
+    <mat-card>
+        <mat-card-title>
+            {{ annonce.title }}
+        </mat-card-title>
+        <mat-card-content>
+            {{ annonce.picture }}
+            <p>{{ annonce.price }} euros</p> 
+        </mat-card-content>
+        <button mat-button [routerLink]="['/detail', annonce.id]">En savoir plus</button>
+        <button mat-button [routerLink]="['/edit-annonce', annonce.id]">Editer</button>
+        <button mat-button (click)="delete(annonce.id)">Supprimer</button>
+    </mat-card>
 </div>

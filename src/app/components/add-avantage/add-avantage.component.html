@@ -1,0 +1,10 @@
+<h1>Ajouter un avantage</h1>
+<button mat-button [routerLink]="['']">Retour</button>
+<form [formGroup]="avantageForm" (ngSubmit)="submit()">
+    <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name" type="text" id="name" required>
+        <mat-error>Required</mat-error>
+    </mat-form-field><br>
+    <button type="submit" [disabled]="!avantageForm.valid">Ajouter</button>
+</form>

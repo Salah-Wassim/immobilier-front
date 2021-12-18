@@ -1,0 +1,7 @@
+<button mat-button [routerLink]="['/add-bien']">Ajouter un type de bien</button>
+<div *ngFor="let bien of biens">
+    {{ bien.name }}
+    <button mat-button (click)="delete(bien.id)">Delete</button>
+    <button mat-button [routerLink]="['/edit-bien', bien.id]">Edit</button>
+</div>
+

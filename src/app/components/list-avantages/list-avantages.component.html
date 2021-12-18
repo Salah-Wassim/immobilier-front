@@ -1,0 +1,6 @@
+<button mat-button [routerLink]="['/add-avantage']">Ajouter un avantage</button>
+<div *ngFor="let avantage of avantages">
+    {{ avantage.name }}
+    <button mat-button (click)="delete(avantage.id)">Delete</button>
+    <button mat-button [routerLink]="['/edit-avantage', avantage.id]">Editer</button>
+</div>

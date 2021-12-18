@@ -39,9 +39,9 @@ export class AnnonceService {
     })
   }
 
-  getEditAnnonce(data: Annonce, id:string): Promise<any>{
+  getEditAnnonce(data: Annonce, id:number): Promise<any>{
     return new Promise((resolve, reject) => {
-      this.http.put('http://localhost:3000/' + `/annonces/${id}`, data)
+      this.http.put('http://localhost:3000/' + `annonces/${id}`, data)
       .subscribe( {
         next: annonce => {resolve(annonce)},
         error: () => reject,
@@ -49,9 +49,9 @@ export class AnnonceService {
     })
   }
 
-  getDeleteAnnonce(id:string): Promise<any>{
+  getDeleteAnnonce(id:number): Promise<any>{
     return new Promise((resolve, reject) => {
-      this.http.delete('http://localhost:3000/' + `/annonces/${id}`)
+      this.http.delete('http://localhost:3000/' + `annonces/${id}`)
       .subscribe( {
         next: () => {resolve(true)},
         error: () => reject,

@@ -1,0 +1,6 @@
+<button mat-button [routerLink]="['/add-keyword']">Ajouter un mot-clé</button>
+<div *ngFor="let keyword of keywords">
+    {{ keyword.name }}
+    <button mat-button (click)="delete(keyword.id)">Delete</button>
+    <button mat-button [routerLink]="['/edit-keyword', keyword.id]">Edit</button>
+</div>

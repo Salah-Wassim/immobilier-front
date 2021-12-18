@@ -20,12 +20,12 @@ export class DetailAnnonceComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getOneAnnonce(this.id)
+    this.getOneAnnonce()
   }
 
-  getOneAnnonce(id:number): void{
-    this.annonceService.getOneAnnonce(id)
-    .then(annonce => {this.annonce = annonce[0]})
+  getOneAnnonce(): void{
+    this.annonceService.getOneAnnonce(this.id)
+    .then(annonce => {this.annonce = annonce})
     .catch(err => console.log(err))
   }
 }

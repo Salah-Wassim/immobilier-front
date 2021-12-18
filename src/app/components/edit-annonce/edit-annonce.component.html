@@ -1,4 +1,4 @@
-<h1>Ajouter Annonce</h1>
+<h1>Editer Annonce</h1>
 <form [formGroup]="annonceForm" (ngSubmit)="submit()">
     <mat-form-field>
         <mat-label>Titre</mat-label>
@@ -62,5 +62,5 @@
             </mat-option>
         </mat-select>
     </mat-form-field><br>
-    <button type="submit" [disabled]="!annonceForm.valid">Publier</button>
+    <button mat-button type="submit" [disabled]="!annonceForm.valid">Publier</button>
 </form>

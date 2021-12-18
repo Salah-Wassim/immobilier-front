@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './components/header/header.component';
 import { ListAnnoncesComponent } from './components/list-annonces/list-annonces.component';
-import { ListItemAnnoncesComponent } from './components/list-item-annonces/list-item-annonces.component';
 import { AddAnnonceComponent } from './components/add-annonce/add-annonce.component';
 import { JwtInterceptorInterceptor } from './_helpers/jwt-interceptor.interceptor';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -24,6 +23,16 @@ import { DetailAnnonceComponent } from './components/detail-annonce/detail-annon
 import {MatTableModule} from '@angular/material/table';
 import { ListRealtorComponent } from './components/list-realtor/list-realtor.component';
 import { LoginComponent } from './components/login/login.component';
+import { EditAnnonceComponent } from './components/edit-annonce/edit-annonce.component';
+import { EditAvantageComponent } from './components/edit-avantage/edit-avantage.component';
+import { EditBienComponent } from './components/edit-bien/edit-bien.component';
+import { EditKeywordComponent } from './components/edit-keyword/edit-keyword.component';
+import { AddAvantageComponent } from './components/add-avantage/add-avantage.component';
+import { AddBienComponent } from './components/add-bien/add-bien.component';
+import { AddKeywordComponent } from './components/add-keyword/add-keyword.component';
+import { ListAvantagesComponent } from './components/list-avantages/list-avantages.component';
+import { ListBiensComponent } from './components/list-biens/list-biens.component';
+import { ListKeywordsComponent } from './components/list-keywords/list-keywords.component';
 
 
 @NgModule({
@@ -31,12 +40,22 @@ import { LoginComponent } from './components/login/login.component';
     AppComponent,
     HeaderComponent,
     ListAnnoncesComponent,
-    ListItemAnnoncesComponent,
     AddAnnonceComponent,
     AddRealtorComponent,
     DetailAnnonceComponent,
     ListRealtorComponent,
-    LoginComponent
+    LoginComponent,
+    EditAnnonceComponent,
+    EditAvantageComponent,
+    EditBienComponent,
+    EditKeywordComponent,
+    AddAvantageComponent,
+    AddBienComponent,
+    AddKeywordComponent,
+    ListAvantagesComponent,
+    ListBiensComponent,
+    ListKeywordsComponent,
+
   ],
   imports: [
     BrowserModule,

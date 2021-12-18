@@ -1,3 +1,4 @@
+<button mat-button [routerLink]="['']">Retour</button>
 <form [formGroup]="loginForm" (submit)="submit()">
     <mat-form-field>
         <mat-label>Email</mat-label>
@@ -9,5 +10,5 @@
         <input matInput type="password" formControlName="password" required><br>
         <mat-error>Veuillez remplir le champ</mat-error><br>
     </mat-form-field><br>
-    <button type="submit" [disabled]="!loginForm.valid">Submit</button>
+    <button mat-button type="submit" [disabled]="!loginForm.valid">Submit</button>
 </form>

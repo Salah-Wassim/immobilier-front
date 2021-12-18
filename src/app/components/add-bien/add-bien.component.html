@@ -1,0 +1,10 @@
+<h1>Editer un bien</h1>
+<button mat-button [routerLink]="['']">Retour</button>
+<form [formGroup]="bienForm" (ngSubmit)="submit()">
+    <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name" type="text" id="name" required>
+        <mat-error>Required</mat-error>
+    </mat-form-field><br>
+    <button type="submit" [disabled]="!bienForm.valid">Ajouter</button>
+</form>

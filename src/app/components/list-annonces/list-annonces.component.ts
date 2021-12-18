@@ -21,4 +21,10 @@ export class ListAnnoncesComponent implements OnInit {
     .then(annonces => {this.annonces = annonces})
     .catch(err => console.log(err))
   }
+
+  delete(id:number){
+    this.annonceService.getDeleteAnnonce(id)
+    .then(() => this.getAnnonces())
+    .catch(err => console.log(err))
+  }
 }
