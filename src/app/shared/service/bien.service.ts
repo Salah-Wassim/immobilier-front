@@ -21,7 +21,7 @@ export class BienService {
 
   getBien(id:number): Promise<any>{
     return new Promise((resolve, reject) => {
-      this.http.get('http://localhost:3000/biens' + id)
+      this.http.get('http://localhost:3000/biens/' + id)
       .subscribe( {
         next: bien => {resolve(bien)},
         error: () => reject,

@@ -27,7 +27,7 @@ export class ListAvantagesComponent implements OnInit {
 
   delete(id:number): void{
     this.avantageService.getDeleteAvantage(id)
-    .then(() => {this.getAvantages()})
+    .then(() => this.getAvantages())
     .catch(err => console.log(err))
   }
 }

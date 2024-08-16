@@ -21,7 +21,7 @@ export class KeywordService {
 
   getOneKeyword(id:number): Promise<any>{
     return new Promise((resolve, reject) => {
-      this.http.get('http://localhost:3000/keywords' + id)
+      this.http.get('http://localhost:3000/keywords/' + id)
       .subscribe( {
         next: keyword => {resolve(keyword)},
         error: () => reject,
@@ -31,7 +31,7 @@ export class KeywordService {
 
   getAddKeyword(data:KeyWord): Promise<any>{
     return new Promise((resolve, reject) => {
-      this.http.get('http://localhost:3000/' + 'keywords.json', data)
+      this.http.post('http://localhost:3000/' + 'keywords', data)
       .subscribe( {
         next: keywords => {resolve(keywords)},
         error: () => reject,
@@ -51,7 +51,7 @@ export class KeywordService {
 
   getDeleteKeyword(id:number): Promise<any>{
     return new Promise((resolve, reject) => {
-      this.http.get('http://localhost:3000/' + `keywords/${id}.json`)
+      this.http.delete('http://localhost:3000/' + `keywords/${id}`)
       .subscribe( {
         next: () => {resolve(true)},
         error: () => reject,

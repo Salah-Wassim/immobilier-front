@@ -8,7 +8,7 @@ import { AnnonceService } from 'src/app/shared/service/annonce.service';
 })
 export class ListAnnoncesComponent implements OnInit {
 
-  annonces: any[] = [];
+  annonces: any = [];
 
   constructor(private annonceService: AnnonceService) { }
 
@@ -24,7 +24,9 @@ export class ListAnnoncesComponent implements OnInit {
 
   delete(id:number){
     this.annonceService.getDeleteAnnonce(id)
-    .then(() => this.getAnnonces())
+    .then(() => {
+      this.getAnnonces()
+    })
     .catch(err => console.log(err))
   }
 }

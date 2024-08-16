@@ -22,7 +22,7 @@ export class AddKeywordComponent implements OnInit {
   submit(): void{
     this.keywordService.getAddKeyword(this.keywordForm.value)
     .then(() => {
-      this.router.navigate([''])
+      this.router.navigate(['list-keywords'])
     })
     .catch(err => console.log(err))
   }

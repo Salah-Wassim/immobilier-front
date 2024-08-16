@@ -26,7 +26,7 @@ const routes: Routes = [
   {'path':'add-avantage', 'component':AddAvantageComponent},
   {'path':'add-bien', 'component':AddBienComponent},
   {'path':'add-keyword', 'component':AddKeywordComponent},
-  {'path':'list-realtor','component': ListRealtorComponent},
+  {'path':'realtors/list-realtor','component': ListRealtorComponent},
   {'path':'list-avantages', 'component':ListAvantagesComponent},
   {'path':'list-biens', 'component':ListBiensComponent},
   {'path':'list-keywords', 'component':ListKeywordsComponent},

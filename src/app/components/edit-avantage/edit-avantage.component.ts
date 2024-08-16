@@ -24,6 +24,7 @@ export class EditAvantageComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.getAvantage()
   }
 
   getAvantage(): void{
@@ -37,7 +38,7 @@ export class EditAvantageComponent implements OnInit {
   submit(): void{
     this.avantageService.getEditAvantage(this.avantageForm.value, this.id)
     .then(() => {
-      this.router.navigate([''])
+      this.router.navigate(['list-avantages'])
     })
     .catch(err => console.log(err))
   }

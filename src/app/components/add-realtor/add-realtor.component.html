@@ -1,3 +1,4 @@
+<button mat-button [routerLink]="['/realtors/list-realtor']">Retour</button>
 <h1>Ajouter un agent immobilier</h1>
 <form [formGroup]="realtorForm" (ngSubmit)="submit()">
     <mat-form-field>
@@ -17,7 +18,7 @@
     </mat-form-field><br>
     <mat-form-field>
         <mat-label>Mot de passe</mat-label>
-        <input matInput formControlName="password" type="text" id="password" required>
+        <input matInput formControlName="password" type="password" id="password" required>
         <mat-error>Required</mat-error>
     </mat-form-field><br>
     <mat-form-field>
@@ -32,11 +33,11 @@
     <mat-label>Role Admin: </mat-label>
     <mat-radio-group formControlName="roleAdmin" required>
         <mat-radio-button [value]="true">
-            1
+            oui
         </mat-radio-button>
         <mat-radio-button [value]="false">
-            0
+            non
         </mat-radio-button>
     </mat-radio-group><br>
-    <button type="submit" [disabled]="!realtorForm.valid">Ajouter</button>
+    <button mat-button type="submit" [disabled]="!realtorForm.valid">Ajouter</button>
 </form>

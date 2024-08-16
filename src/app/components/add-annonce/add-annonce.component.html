@@ -1,3 +1,4 @@
+<button mat-button [routerLink]="['/']">Retour</button>
 <h1>Ajouter Annonce</h1>
 <form [formGroup]="annonceForm" (ngSubmit)="submit()">
     <mat-form-field>
@@ -7,7 +8,7 @@
     </mat-form-field><br>
     <mat-form-field>
         <mat-label>Prix</mat-label>
-        <input matInput formControlName="price" type="text" id="price" required>
+        <input matInput formControlName="price" type="number" id="price" required>
         <mat-error>Required</mat-error>
     </mat-form-field><br>
     <mat-form-field>
@@ -17,7 +18,7 @@
     </mat-form-field><br>
     <mat-form-field>
         <mat-label>Nombre de pièce</mat-label>
-        <input matInput formControlName="nbRoom" type="text" id="nbRoom" required>
+        <input matInput formControlName="nbRoom" type="number" id="nbRoom" required>
         <mat-error></mat-error>
     </mat-form-field><br>
     <mat-form-field>
@@ -33,7 +34,7 @@
     <mat-form-field appearance="outline">
         <mat-label>Agent Immobilier</mat-label>
         <mat-select formControlName="agentImmobilier">
-            <mat-option *ngFor="let agentImmobilier of agentImmobiliers" [value]="agentImmobilier.name">
+            <mat-option *ngFor="let agentImmobilier of agentImmobiliers" [value]="agentImmobilier.id">
                 {{ agentImmobilier.name }}
             </mat-option>
         </mat-select>
@@ -41,7 +42,7 @@
     <mat-form-field appearance="outline">
         <mat-label>Type de bien</mat-label>
         <mat-select formControlName="biens">
-            <mat-option *ngFor="let bien of biens" [value]="bien.name">
+            <mat-option *ngFor="let bien of biens" [value]="bien.id">
                 {{ bien.name }}
             </mat-option>
         </mat-select>
@@ -49,7 +50,7 @@
     <mat-form-field appearance="fill">
         <mat-label>Avantage</mat-label>
         <mat-select formControlName="avantage" multiple>
-            <mat-option *ngFor="let avantage of avantages" [value]="avantage.name">
+            <mat-option *ngFor="let avantage of avantages" [value]="avantage.id">
                 {{ avantage.name }}
             </mat-option>
         </mat-select>
@@ -57,10 +58,10 @@
     <mat-form-field appearance="fill">
         <mat-label>Mots clés</mat-label>
         <mat-select formControlName="keyWord" multiple>
-            <mat-option *ngFor="let keyword of keywords" [value]="keyword.name">
+            <mat-option *ngFor="let keyword of keywords" [value]="keyword.id">
                 {{ keyword.name }}
             </mat-option>
         </mat-select>
     </mat-form-field><br>
-    <button type="submit" [disabled]="!annonceForm.valid">Publier</button>
+    <button mat-button type="submit" [disabled]="!annonceForm.valid">Publier</button>
 </form>

@@ -23,6 +23,7 @@ export class EditKeywordComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.getOneKeyword()
   }
 
   getOneKeyword(): void{

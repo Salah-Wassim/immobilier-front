@@ -22,7 +22,7 @@ export class AddAvantageComponent implements OnInit {
   submit(): void{
     this.avantageService.getAddAvantage(this.avantageForm.value)
     .then(() => {
-      this.router.navigate([''])
+      this.router.navigate(['list-avantages'])
     })
     .catch(err => console.log(err))
   }

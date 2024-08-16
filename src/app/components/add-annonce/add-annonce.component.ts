@@ -66,6 +66,7 @@ export class AddAnnonceComponent implements OnInit {
   }
 
   submit(): void{
+    console.log("annonce value", this.annonceForm.value);
     this.annonceService.getAddAnnonce(this.annonceForm.value)
     .then(() => {
       this.router.navigate(['/']);

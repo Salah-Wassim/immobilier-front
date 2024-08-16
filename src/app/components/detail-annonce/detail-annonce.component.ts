@@ -10,7 +10,7 @@ import { AnnonceService } from 'src/app/shared/service/annonce.service';
 export class DetailAnnonceComponent implements OnInit {
 
   id: number = 0;
-  annonce: any;
+  annonce: any = []
 
   constructor(private annonceService: AnnonceService, private route: ActivatedRoute) {
     this.route.params

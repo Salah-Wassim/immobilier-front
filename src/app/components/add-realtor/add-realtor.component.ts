@@ -28,7 +28,7 @@ export class AddRealtorComponent implements OnInit {
   submit(){
     this.realtorService.getAddAgentImmobilier(this.realtorForm.value)
     .then(() => {
-      this.router.navigate(['list-realtor'])
+      this.router.navigate(['/realtors/list-realtor'])
     })
     .catch(err => console.log(err))
   }

@@ -21,7 +21,7 @@ export class AvantageService {
 
   getAvantage(id:number): Promise<any>{
     return new Promise((resolve, reject) => {
-      this.http.get('http://localhost:3000/avantages' + id)
+      this.http.get('http://localhost:3000/avantages/' + id)
       .subscribe( {
         next: avantage => {resolve(avantage)},
         error: () => reject,
@@ -41,7 +41,7 @@ export class AvantageService {
 
   getEditAvantage(data: Avantage, id:number): Promise<any>{
     return new Promise((resolve, reject) => {
-      this.http.post('http://localhost:3000/' + `avantages/${id}`, data)
+      this.http.put('http://localhost:3000/' + `avantages/${id}`, data)
       .subscribe( {
         next: avantage => {resolve(avantage)},
         error: () => reject,

@@ -1,6 +1,8 @@
 <button [routerLink]="['/']">Retour</button>
 <mat-card>
     <mat-card-content>
+        {{ annonce?.title }}
         {{ annonce?.description }}
+        {{ annonce?.price }}
     </mat-card-content>
 </mat-card>
