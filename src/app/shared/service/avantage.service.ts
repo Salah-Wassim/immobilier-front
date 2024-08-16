@@ -59,3 +59,8 @@ export class AvantageService {
     })
   }
 }
+
+export interface AvantageInterface {
+  id: number;
+  name: string;
+}

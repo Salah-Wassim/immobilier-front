@@ -33,23 +33,23 @@
     </mat-form-field><br>
     <mat-form-field appearance="outline">
         <mat-label>Agent Immobilier</mat-label>
-        <mat-select formControlName="agentImmobilier">
-            <mat-option *ngFor="let agentImmobilier of agentImmobiliers" [value]="agentImmobilier.id">
-                {{ agentImmobilier.name }}
+        <mat-select formControlName="AgentImmobilierId">
+            <mat-option *ngFor="let AgentImmobilierId of AgentImmobilierIds" [value]="AgentImmobilierId.id">
+                {{ AgentImmobilierId.name }}
             </mat-option>
         </mat-select>
     </mat-form-field><br>
     <mat-form-field appearance="outline">
         <mat-label>Type de bien</mat-label>
-        <mat-select formControlName="biens">
-            <mat-option *ngFor="let bien of biens" [value]="bien.id">
-                {{ bien.name }}
+        <mat-select formControlName="BienId">
+            <mat-option *ngFor="let BienId of BienIds" [value]="BienId.id">
+                {{ BienId.name }}
             </mat-option>
         </mat-select>
     </mat-form-field><br>
     <mat-form-field appearance="fill">
         <mat-label>Avantage</mat-label>
-        <mat-select formControlName="avantage" multiple>
+        <mat-select formControlName="avantageIds" multiple>
             <mat-option *ngFor="let avantage of avantages" [value]="avantage.id">
                 {{ avantage.name }}
             </mat-option>
@@ -57,9 +57,9 @@
     </mat-form-field><br>
     <mat-form-field appearance="fill">
         <mat-label>Mots clés</mat-label>
-        <mat-select formControlName="keyWord" multiple>
-            <mat-option *ngFor="let keyword of keywords" [value]="keyword.id">
-                {{ keyword.name }}
+        <mat-select formControlName="keyWordIds" multiple>
+            <mat-option *ngFor="let keyWord of keyWords" [value]="keyWord.id">
+                {{ keyWord.name }}
             </mat-option>
         </mat-select>
     </mat-form-field><br>

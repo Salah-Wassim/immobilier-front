@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AnnonceService } from 'src/app/shared/service/annonce.service';
-import { AvantageService } from 'src/app/shared/service/avantage.service';
+import { AvantageService, AvantageInterface } from 'src/app/shared/service/avantage.service';
 import { BienService } from 'src/app/shared/service/bien.service';
-import { KeywordService } from 'src/app/shared/service/keyword.service';
+import { KeywordService, Keyword } from 'src/app/shared/service/keyword.service';
 import { RealtorService } from 'src/app/shared/service/realtor.service';
 
 @Component({
@@ -20,19 +20,19 @@ export class AddAnnonceComponent implements OnInit {
     secteur: ['', Validators.required],
     nbRoom: ['', Validators.required],
     description: ['', Validators.required],
-    keyWord: ['', Validators.required],
+    keyWordIds: [[], Validators.required],
     picture: [''],
-    agentImmobilier: ['', Validators.required],
-    biens: ['', Validators.required],
-    avantage: ['', Validators.required],
+    AgentImmobilierId: ['', Validators.required],
+    BienId: ['', Validators.required],
+    avantageIds: [[], Validators.required],
   })
 
   constructor(private router: Router, private fb:FormBuilder, private annonceService: AnnonceService,private bienService: BienService, private avantageService: AvantageService, private keywordService: KeywordService, private realtorService: RealtorService) { }
 
-  biens: any = [];
-  avantages: any = [];
-  keywords: any = [];
-  agentImmobiliers: any = [];
+  BienIds: any = [];
+  avantages: AvantageInterface[] = [];
+  keyWords: Keyword[] = [];
+  AgentImmobilierIds: any = [];
 
   ngOnInit(): void {
     this.getBiens()
@@ -43,7 +43,7 @@ export class AddAnnonceComponent implements OnInit {
 
   getBiens():void{
     this.bienService.getBiens()
-    .then(biens => {this.biens = biens})
+    .then(BienIds => {this.BienIds = BienIds})
     .catch(err => console.log(err))
   }
   
@@ -55,19 +55,20 @@ export class AddAnnonceComponent implements OnInit {
   
   getKeyword(): void{
     this.keywordService.getKeyword()
-    .then(keywords => {this.keywords = keywords})
+    .then(keyWords => {this.keyWords = keyWords})
     .catch(err => console.log(err))
   }
 
   getAgentImmobilier(): void{
     this.realtorService.getAgentImmobilier()
-    .then(agentImmobiliers => {this.agentImmobiliers = agentImmobiliers})
+    .then(AgentImmobilierIds => {this.AgentImmobilierIds = AgentImmobilierIds})
     .catch(err => console.log(err))
   }
 
   submit(): void{
-    console.log("annonce value", this.annonceForm.value);
-    this.annonceService.getAddAnnonce(this.annonceForm.value)
+    console.log("annonce value", this.annonceForm.value.keyWordIds);
+    const formValue = this.annonceForm.value
+    this.annonceService.getAddAnnonce(formValue)
     .then(() => {
       this.router.navigate(['/']);
     })
