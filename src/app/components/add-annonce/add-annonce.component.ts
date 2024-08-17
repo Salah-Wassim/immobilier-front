@@ -66,7 +66,6 @@ export class AddAnnonceComponent implements OnInit {
   }
 
   submit(): void{
-    console.log("annonce value", this.annonceForm.value.keyWordIds);
     const formValue = this.annonceForm.value
     this.annonceService.getAddAnnonce(formValue)
     .then(() => {
