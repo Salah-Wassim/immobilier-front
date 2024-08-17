@@ -4,22 +4,22 @@ export class Annonce {
     secteur: string;
     nbRoom: number;
     description: string;
-    keyWord: string;
+    keyWordIds: number[];
     picture: string;
-    agentImmobilier: string;
-    biens: string;
+    AgentImmobilierId: number;
+    BienId: number;
     avantage: string;
 
     constructor(annonce?:any){
         this.title = annonce.title || " ";
         this.price = annonce.price || 0;
         this.secteur = annonce.secteur || " ";
-        this.nbRoom = annonce.nbRoom || " ";
+        this.nbRoom = annonce.nbRoom || 0;
         this.description = annonce.description || " ";
-        this.keyWord = annonce.keyWord || " ";
+        this.keyWordIds = annonce.keyWordIds || [];
         this.picture = annonce.picture || " ";
-        this.agentImmobilier = annonce.agentImmobilier || " ";
-        this.biens = annonce.biens || " ";
+        this.AgentImmobilierId = annonce.AgentImmobilierId || 0;
+        this.BienId = annonce.BienId || 0;
         this.avantage = annonce.avantage || " ";
     }
 }

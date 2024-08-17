@@ -31,7 +31,6 @@ export class AnnonceService {
 
   getAddAnnonce(data: Annonce): Promise<any>{
     return new Promise((resolve, reject) => {
-      console.log("data", data)
       this.http.post('http://localhost:3000/' + 'annonces', data)
       .subscribe( {
         next: annonce => {resolve(annonce)},

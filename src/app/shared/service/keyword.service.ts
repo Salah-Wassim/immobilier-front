@@ -59,3 +59,8 @@ export class KeywordService {
     })
   }
 }
+
+export interface Keyword {
+  id: number;
+  name: string;
+}
