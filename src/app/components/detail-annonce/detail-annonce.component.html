@@ -1,8 +1,43 @@
 <button [routerLink]="['/']">Retour</button>
-<mat-card>
+
+<mat-card class="property-card">
+    <mat-card-header>
+      <mat-card-title>{{ annonce?.title }}</mat-card-title>
+      <mat-card-subtitle>{{ annonce?.price | currency:'EUR':'symbol':'1.0-0' }}</mat-card-subtitle>
+    </mat-card-header>
+  
     <mat-card-content>
-        {{ annonce?.title }}
-        {{ annonce?.description }}
-        {{ annonce?.price }}
+      <!-- <div class="property-image" *ngIf="annonce?.picture">
+        <img [src]="annonce?.picture" alt="Image of {{ annonce?.title }}">
+      </div> -->
+  
+      <p class="property-description">{{ annonce?.description }}</p>
+  
+      <div class="property-details">
+        <h3>Détails de la propriété</h3>
+        <p>Type de bien : {{ annonce?.Bien?.name }}</p>
+        <p *ngIf="annonce?.AgentImmobilier?.name">Agent Immobilier : {{ annonce?.AgentImmobilier?.name }}</p>
+        <p>Lieu : {{ annonce?.secteur }}</p>
+        <p>Nombre de pièces : {{ annonce?.nbRoom }}</p>
+      </div>
+  
+      <div class="property-advantages" *ngIf="annonce?.Avantages?.length">
+        <h3>Avantages</h3>
+        <ul>
+          <li *ngFor="let avantage of annonce?.Avantages">
+            {{ avantage?.name }}
+          </li>
+        </ul>
+      </div>
+  
+      <div class="property-keywords" *ngIf="annonce?.KeyWords?.length">
+        <h3>Mots-clés</h3>
+        <ul>
+          <li *ngFor="let keyWord of annonce?.KeyWords">
+            {{ keyWord?.name }}
+          </li>
+        </ul>
+      </div>
     </mat-card-content>
-</mat-card>
+  </mat-card>
+  
