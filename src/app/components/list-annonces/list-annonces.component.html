@@ -1,16 +1,20 @@
-<button mat-button [routerLink]="['/add-annonces']">Creer une annonce</button>
+<button mat-raised-button color="primary" [routerLink]="['/add-annonces']">Créer une annonce</button>
 <button mat-button [routerLink]="['/login']">Se connecter</button>
-<div *ngFor="let annonce of annonces">
-    <mat-card>
-        <mat-card-title>
-            {{ annonce.title }}
-        </mat-card-title>
+
+<div class="annonces-list">
+    <mat-card class="annonce-card" *ngFor="let annonce of annonces">
+        <mat-card-header>
+            <mat-card-title>{{ annonce.title }}</mat-card-title>
+        </mat-card-header>
+        <!-- <img mat-card-image [src]="annonce.picture" alt="Image of {{ annonce.title }}" /> -->
         <mat-card-content>
-            {{ annonce.picture }}
-            <p>{{ annonce.price }} euros</p> 
+            <p class="annonce-price">{{ annonce.price }} €</p>
         </mat-card-content>
-        <button mat-button [routerLink]="['/detail', annonce.id]">En savoir plus</button>
-        <button mat-button [routerLink]="['/edit-annonce', annonce.id]">Editer</button>
-        <button mat-button (click)="delete(annonce.id)">Supprimer</button>
+        <mat-card-actions>
+            <button mat-button [routerLink]="['/detail', annonce.id]">En savoir plus</button>
+            <button mat-button [routerLink]="['/edit-annonce', annonce.id]">Editer</button>
+            <button mat-button color="warn" (click)="delete(annonce.id)">Supprimer</button>
+          </mat-card-actions>
     </mat-card>
 </div>
+  

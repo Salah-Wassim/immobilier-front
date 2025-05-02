@@ -1,0 +1,42 @@
+  .annonces-list {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 16px;
+  }
+  
+   .annonce-card {
+    max-width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .annonce-card:hover {
+    transform: scale(1.02);
+  }
+  
+  .annonce-card mat-card-header {
+    background-color: #f8f8f8;
+    padding: 16px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .annonce-card img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .annonce-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #00796b;
+  }
+  
+  mat-card-actions button {
+    margin-right: 8px;
+  }
+  

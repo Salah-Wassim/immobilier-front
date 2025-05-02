@@ -37,7 +37,7 @@ export class EditBienComponent implements OnInit {
   submit(): void{
     this.bienService.getEditBien(this.bienForm.value, this.id)
     .then(() => {
-      this.router.navigate([''])
+      this.router.navigate(['list-biens'])
     })
     .catch(err => console.log(err))
   }
