@@ -1,0 +1,20 @@
+<h1>Editer Agent Immobilier</h1>
+<form [formGroup]="realtorForm" (ngSubmit)="submit()">
+    <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name" type="text" id="name">
+    </mat-form-field><br>
+    <mat-form-field>
+        <mat-label>Age</mat-label>
+        <input matInput formControlName="age" type="number" id="age">
+    </mat-form-field><br>
+    <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" type="email" id="email">
+    </mat-form-field><br>
+    <mat-form-field>
+        <mat-label>Telephone</mat-label>
+        <input matInput formControlName="phoneNumber" type="text" id="phoneNumber">
+    </mat-form-field><br>
+    <button mat-button type="submit" [disabled]="!realtorForm.valid">Editer</button>
+</form>

@@ -34,6 +34,7 @@ import { ListAvantagesComponent } from './components/list-avantages/list-avantag
 import { ListBiensComponent } from './components/list-biens/list-biens.component';
 import { ListKeywordsComponent } from './components/list-keywords/list-keywords.component';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { EditRealtorComponent } from './components/edit-realtor/edit-realtor.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
     ListAvantagesComponent,
     ListBiensComponent,
     ListKeywordsComponent,
+    EditRealtorComponent,
 
   ],
   imports: [

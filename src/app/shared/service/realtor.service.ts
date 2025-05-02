@@ -19,9 +19,9 @@ export class RealtorService {
     })
   }
 
-  getOneAgentImmobilier(id: string): Promise<any>{
+  getOneAgentImmobilier(id: number): Promise<any>{
     return new Promise((resolve, reject) => {
-      this.http.get('http://localhost:3000/' + `realtors/${id}`)
+      this.http.get('http://localhost:3000/' + `realtors/realtor/${id}`)
       .subscribe( {
         next: agentImmobilier => {resolve(agentImmobilier)},
         error: () => reject,
@@ -39,9 +39,9 @@ export class RealtorService {
     })
   }
 
-  getEditAgentImmobilier(data:AgentImmobilier, id:string): Promise<any>{
+  getEditAgentImmobilier(data:AgentImmobilier, id:number): Promise<any>{
     return new Promise((resolve, reject) => {
-      this.http.put('http://localhost:3000/' + `realtors/${id}`, data)
+      this.http.put('http://localhost:3000/' + `realtors/edit-realtor/${id}`, data)
       .subscribe( {
         next: realtor => {resolve(realtor)},
         error: () => reject,

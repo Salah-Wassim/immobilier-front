@@ -16,6 +16,7 @@ import { ListBiensComponent } from './components/list-biens/list-biens.component
 import { ListKeywordsComponent } from './components/list-keywords/list-keywords.component';
 import { ListRealtorComponent } from './components/list-realtor/list-realtor.component';
 import { LoginComponent } from './components/login/login.component';
+import { EditRealtorComponent } from './components/edit-realtor/edit-realtor.component';
 
 
 const routes: Routes = [
@@ -34,6 +35,7 @@ const routes: Routes = [
   {'path':'edit-avantage/:id', 'component': EditAvantageComponent},
   {'path':'edit-bien/:id', 'component': EditBienComponent},
   {'path':'edit-keyword/:id', 'component': EditKeywordComponent},
+  {'path':'realtors/edit-realtor/:id', 'component':EditRealtorComponent},
   {'path':'detail/:id', 'component': DetailAnnonceComponent},
 ];
 
