@@ -33,7 +33,8 @@ import { AddKeywordComponent } from './components/add-keyword/add-keyword.compon
 import { ListAvantagesComponent } from './components/list-avantages/list-avantages.component';
 import { ListBiensComponent } from './components/list-biens/list-biens.component';
 import { ListKeywordsComponent } from './components/list-keywords/list-keywords.component';
-
+import {MatGridListModule} from '@angular/material/grid-list';
+import { EditRealtorComponent } from './components/edit-realtor/edit-realtor.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { ListKeywordsComponent } from './components/list-keywords/list-keywords.
     ListAvantagesComponent,
     ListBiensComponent,
     ListKeywordsComponent,
+    EditRealtorComponent,
 
   ],
   imports: [
@@ -72,6 +74,7 @@ import { ListKeywordsComponent } from './components/list-keywords/list-keywords.
     MatMenuModule,
     ReactiveFormsModule,
     MatTableModule,
+    MatGridListModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptorInterceptor, multi:true}

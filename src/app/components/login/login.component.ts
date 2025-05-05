@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
   submit(){
     this.authentificationService.getAdminLogin(this.loginForm.value)
     .then( () => {
-      this.router.navigate([''])
+      this.router.navigate(['list-biens'])
     })
     .catch(err => console.log(err))
   }
