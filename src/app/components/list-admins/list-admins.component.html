@@ -1,0 +1,4 @@
+<div *ngFor="let admin of admins">
+    {{ admin.name }}
+    <button mat-button color="warn" (click)="delete(admin.id)">Delete</button>
+</div>
