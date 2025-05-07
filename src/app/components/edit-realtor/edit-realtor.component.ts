@@ -14,10 +14,10 @@ export class EditRealtorComponent implements OnInit {
   id:number = 0
 
   realtorForm = this.fb.group({
-    name: [''],
-    age:[''],
-    email: [''],
-    phoneNumber: ['']
+    name: ['', Validators.required],
+    age:['', Validators.required],
+    email: ['', Validators.required],
+    phoneNumber: ['', Validators.required]
   })
 
   constructor(private fb:FormBuilder, private route: ActivatedRoute, private router: Router, private realtorService: RealtorService) {

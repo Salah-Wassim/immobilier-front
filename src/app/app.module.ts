@@ -35,6 +35,9 @@ import { ListBiensComponent } from './components/list-biens/list-biens.component
 import { ListKeywordsComponent } from './components/list-keywords/list-keywords.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { EditRealtorComponent } from './components/edit-realtor/edit-realtor.component';
+import { ListAdminsComponent } from './components/list-admins/list-admins.component';
+import { EditAdminComponent } from './components/edit-admin/edit-admin.component';
+import { AddAdminComponent } from './components/add-admin/add-admin.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +60,9 @@ import { EditRealtorComponent } from './components/edit-realtor/edit-realtor.com
     ListBiensComponent,
     ListKeywordsComponent,
     EditRealtorComponent,
+    ListAdminsComponent,
+    EditAdminComponent,
+    AddAdminComponent,
 
   ],
   imports: [
