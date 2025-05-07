@@ -10,6 +10,7 @@ import { EditAnnonceComponent } from './components/edit-annonce/edit-annonce.com
 import { EditAvantageComponent } from './components/edit-avantage/edit-avantage.component';
 import { EditBienComponent } from './components/edit-bien/edit-bien.component';
 import { EditKeywordComponent } from './components/edit-keyword/edit-keyword.component';
+import { EditAdminComponent } from './components/edit-admin/edit-admin.component';
 import { ListAnnoncesComponent } from './components/list-annonces/list-annonces.component';
 import { ListAvantagesComponent } from './components/list-avantages/list-avantages.component';
 import { ListBiensComponent } from './components/list-biens/list-biens.component';
@@ -37,6 +38,7 @@ const routes: Routes = [
   {'path':'edit-avantage/:id', 'component': EditAvantageComponent},
   {'path':'edit-bien/:id', 'component': EditBienComponent},
   {'path':'edit-keyword/:id', 'component': EditKeywordComponent},
+  {'path':'edit-admin/:id', 'component':EditAdminComponent},
   {'path':'realtors/edit-realtor/:id', 'component':EditRealtorComponent},
   {'path':'detail/:id', 'component': DetailAnnonceComponent},
 ];

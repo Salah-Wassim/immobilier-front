@@ -39,7 +39,7 @@ export class AdminService {
     })
   }
 
-  editAdmin(id:number, data:Admin): Promise<any>{
+  editAdmin(data:Admin, id:number): Promise<any>{
     return new Promise((resolve, reject) => {
       this.http.put(`http://localhost:3000/admin/edit-admin/${id}`, data)
       .subscribe({

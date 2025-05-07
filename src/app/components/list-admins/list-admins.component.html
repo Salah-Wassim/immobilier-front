@@ -1,4 +1,5 @@
 <div *ngFor="let admin of admins">
     {{ admin.name }}
-    <button mat-button color="warn" (click)="delete(admin.id)">Delete</button>
+    <button mat-button [routerLink]="['/edit-admin', admin.id]">Editer</button>
+    <button mat-button color="warn" (click)="deleteAdmin(admin.id)">Delete</button>
 </div>
