@@ -1,3 +1,4 @@
+<button mat-button [routerLink]="['/add-admin']">Ajouter un admin</button>
 <div *ngFor="let admin of admins">
     {{ admin.name }}
     <button mat-button [routerLink]="['/edit-admin', admin.id]">Editer</button>

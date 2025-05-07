@@ -5,6 +5,7 @@ import { AddAvantageComponent } from './components/add-avantage/add-avantage.com
 import { AddBienComponent } from './components/add-bien/add-bien.component';
 import { AddKeywordComponent } from './components/add-keyword/add-keyword.component';
 import { AddRealtorComponent } from './components/add-realtor/add-realtor.component';
+import { AddAdminComponent } from './components/add-admin/add-admin.component';
 import { DetailAnnonceComponent } from './components/detail-annonce/detail-annonce.component';
 import { EditAnnonceComponent } from './components/edit-annonce/edit-annonce.component';
 import { EditAvantageComponent } from './components/edit-avantage/edit-avantage.component';
@@ -29,6 +30,7 @@ const routes: Routes = [
   {'path':'add-avantage', 'component':AddAvantageComponent},
   {'path':'add-bien', 'component':AddBienComponent},
   {'path':'add-keyword', 'component':AddKeywordComponent},
+  {'path':'add-admin', 'component': AddAdminComponent},
   {'path':'realtors/list-realtor','component': ListRealtorComponent},
   {'path':'list-avantages', 'component':ListAvantagesComponent},
   {'path':'list-biens', 'component':ListBiensComponent},

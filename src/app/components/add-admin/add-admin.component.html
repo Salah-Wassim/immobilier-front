@@ -1,0 +1,23 @@
+<button mat-button [routerLink]="['/list-admins']">Retour</button>
+<h1>Ajouter un avantage</h1>
+<form [formGroup]="adminForm" (ngSubmit)="submit()">
+    <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name" type="text" id="name" required>
+        <mat-error>Required</mat-error>
+    </mat-form-field><br>
+    <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" type="email" id="email" required>
+        <mat-error>Required</mat-error>
+    </mat-form-field><br>
+    <mat-form-field>
+        <mat-label>Mot de passe</mat-label>
+        <input matInput formControlName="password" type="password" id="password" required>
+        <mat-error>Required</mat-error>
+    </mat-form-field><br>
+    <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+    </div>
+    <button mat-button type="submit" [disabled]="!adminForm.valid">Creer</button>
+</form>

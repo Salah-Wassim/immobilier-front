@@ -14,7 +14,7 @@ export class AdminService {
       this.http.get('http://localhost:3000/admin')
       .subscribe( {
         next: admin => {resolve(admin)},
-        error: () => reject,
+        error: (err) => reject(err),
       })
     })
   }
@@ -24,7 +24,7 @@ export class AdminService {
       this.http.get('http://localhost:3000/admin/' + id)
       .subscribe( {
         next: admin => {resolve(admin)},
-        error: () => reject,
+        error: (err) => reject(err),
       })
     })
   }
@@ -34,7 +34,7 @@ export class AdminService {
       this.http.post('http://localhost:3000/admin/new-admin', data)
       .subscribe({
         next: admin => {resolve(admin)},
-        error: () => reject
+        error: (err) => reject(err)
       })
     })
   }
@@ -44,17 +44,17 @@ export class AdminService {
       this.http.put(`http://localhost:3000/admin/edit-admin/${id}`, data)
       .subscribe({
         next: admin => {resolve(admin)},
-        error: () => reject,
+        error: (err) => reject(err),
       })
     })
   }
 
   deleteAdmin(id:number): Promise<any>{
     return new Promise((resolve, reject) => {
-      this.http.delete('http://localhost:3000/admin/delete-admin' + id)
+      this.http.delete('http://localhost:3000/admin/delete-admin/' + id)
       .subscribe({
         next: () => resolve(true),
-        error: () => reject,
+        error: (err) => reject(err),
       })
     })
   }
