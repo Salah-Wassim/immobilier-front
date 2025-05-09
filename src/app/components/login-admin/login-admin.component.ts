@@ -4,11 +4,11 @@ import { Router } from '@angular/router';
 import { AuthentificationService } from 'src/app/shared/service/authentification.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-login-admin',
+  templateUrl: './login-admin.component.html',
+  styleUrls: ['./login-admin.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginAdminComponent implements OnInit {
 
   loginForm = this.fb.group({
     email:['', Validators.required],

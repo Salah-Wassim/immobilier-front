@@ -17,14 +17,13 @@ import { ListAvantagesComponent } from './components/list-avantages/list-avantag
 import { ListBiensComponent } from './components/list-biens/list-biens.component';
 import { ListKeywordsComponent } from './components/list-keywords/list-keywords.component';
 import { ListRealtorComponent } from './components/list-realtor/list-realtor.component';
-import { LoginComponent } from './components/login/login.component';
 import { EditRealtorComponent } from './components/edit-realtor/edit-realtor.component';
 import { ListAdminsComponent } from './components/list-admins/list-admins.component';
+import { LoginAdminComponent } from './components/login-admin/login-admin.component';
 
 
 const routes: Routes = [
   {'path':'', 'component': ListAnnoncesComponent},
-  {'path':'login', 'component':LoginComponent},
   {'path':'add-realtors','component': AddRealtorComponent},
   {'path':'add-annonces','component': AddAnnonceComponent},
   {'path':'add-avantage', 'component':AddAvantageComponent},
@@ -43,6 +42,8 @@ const routes: Routes = [
   {'path':'edit-admin/:id', 'component':EditAdminComponent},
   {'path':'realtors/edit-realtor/:id', 'component':EditRealtorComponent},
   {'path':'detail/:id', 'component': DetailAnnonceComponent},
+  {'path':'login-admin', 'component':LoginAdminComponent}
+
 ];
 
 @NgModule({
