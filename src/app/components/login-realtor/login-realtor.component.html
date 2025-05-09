@@ -1,5 +1,5 @@
 <button mat-button [routerLink]="['']">Retour</button>
-<form [formGroup]="loginForm" (submit)="submit()">
+<form [formGroup]="loginRealtorForm" (submit)="submit()">
     <mat-form-field>
         <mat-label>Email</mat-label>
         <input matInput type="text" formControlName="email" required><br>
@@ -13,5 +13,5 @@
     <div *ngIf="errorMessage" class="error-message">
         {{ errorMessage }}
     </div>
-    <button mat-button type="submit" [disabled]="!loginForm.valid">Submit</button>
+    <button mat-button type="submit" [disabled]="!loginRealtorForm.valid">Submit</button>
 </form>

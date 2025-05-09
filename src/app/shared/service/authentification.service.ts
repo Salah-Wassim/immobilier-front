@@ -16,7 +16,7 @@ export class AuthentificationService {
           localStorage.setItem('auth', token.token)
           resolve(token)
         },
-        error: () => reject,
+        error: (err) => reject(err),
       })
     })
   }
@@ -29,7 +29,7 @@ export class AuthentificationService {
           localStorage.setItem('auth', token.token)
           resolve(token)
         },
-        error: () => reject,
+        error: (err) => reject(err),
       })
     })
   }

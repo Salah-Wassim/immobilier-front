@@ -4,31 +4,31 @@ import { Router } from '@angular/router';
 import { AuthentificationService } from 'src/app/shared/service/authentification.service';
 
 @Component({
-  selector: 'app-login-admin',
-  templateUrl: './login-admin.component.html',
-  styleUrls: ['./login-admin.component.css']
+  selector: 'app-login-realtor',
+  templateUrl: './login-realtor.component.html',
+  styleUrls: ['./login-realtor.component.css']
 })
-export class LoginAdminComponent implements OnInit {
+export class LoginRealtorComponent implements OnInit {
 
   errorMessage: string | null = null;
 
-  loginForm = this.fb.group({
+  loginRealtorForm = this.fb.group({
     email:['', Validators.required],
     password:['', Validators.required]
   })
 
-  constructor(private router: Router, private fb: FormBuilder, private authentificationService: AuthentificationService) { }
+  constructor(private fb: FormBuilder, private router: Router, private authentificationService: AuthentificationService) { }
 
   ngOnInit(): void {
   }
 
   submit(){
-    this.authentificationService.getAdminLogin(this.loginForm.value)
+    this.authentificationService.getRealtorLogin(this.loginRealtorForm.value)
     .then( () => {
       this.router.navigate([''])
     })
     .catch(err => {
-      console.error(err)
+      console.error(err);
       if(err.error?.errorMessage){
         this.errorMessage = err.error.message
       }else{
@@ -36,5 +36,4 @@ export class LoginAdminComponent implements OnInit {
       }
     })
   }
-
 }
