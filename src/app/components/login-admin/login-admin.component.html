@@ -10,5 +10,8 @@
         <input matInput type="password" formControlName="password" required><br>
         <mat-error>Veuillez remplir le champ</mat-error><br>
     </mat-form-field><br>
+    <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+    </div>
     <button mat-button type="submit" [disabled]="!loginForm.valid">Submit</button>
 </form>

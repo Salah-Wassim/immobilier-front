@@ -1,5 +1,10 @@
 <button mat-raised-button color="primary" [routerLink]="['/add-annonces']">Créer une annonce</button>
-<button mat-button [routerLink]="['/login']">Se connecter</button>
+<button mat-button [matMenuTriggerFor]="menu">Se connecter</button>
+<mat-menu #menu="matMenu">
+    <button mat-menu-item [routerLink]="['/login-admin']" routerLinkActive="router-link-active">Admin</button>
+    <button mat-menu-item [routerLink]="['/login-realtor']" routerLinkActive="router-link-active">Agent Immobilier</button>
+</mat-menu>
+
 
 <div class="annonces-list">
     <mat-card class="annonce-card" *ngFor="let annonce of annonces">

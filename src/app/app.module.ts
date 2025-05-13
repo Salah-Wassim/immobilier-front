@@ -22,7 +22,6 @@ import { AddRealtorComponent } from './components/add-realtor/add-realtor.compon
 import { DetailAnnonceComponent } from './components/detail-annonce/detail-annonce.component';
 import {MatTableModule} from '@angular/material/table';
 import { ListRealtorComponent } from './components/list-realtor/list-realtor.component';
-import { LoginComponent } from './components/login/login.component';
 import { EditAnnonceComponent } from './components/edit-annonce/edit-annonce.component';
 import { EditAvantageComponent } from './components/edit-avantage/edit-avantage.component';
 import { EditBienComponent } from './components/edit-bien/edit-bien.component';
@@ -38,6 +37,8 @@ import { EditRealtorComponent } from './components/edit-realtor/edit-realtor.com
 import { ListAdminsComponent } from './components/list-admins/list-admins.component';
 import { EditAdminComponent } from './components/edit-admin/edit-admin.component';
 import { AddAdminComponent } from './components/add-admin/add-admin.component';
+import { LoginAdminComponent } from './components/login-admin/login-admin.component';
+import { LoginRealtorComponent } from './components/login-realtor/login-realtor.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,6 @@ import { AddAdminComponent } from './components/add-admin/add-admin.component';
     AddRealtorComponent,
     DetailAnnonceComponent,
     ListRealtorComponent,
-    LoginComponent,
     EditAnnonceComponent,
     EditAvantageComponent,
     EditBienComponent,
@@ -63,6 +63,8 @@ import { AddAdminComponent } from './components/add-admin/add-admin.component';
     ListAdminsComponent,
     EditAdminComponent,
     AddAdminComponent,
+    LoginAdminComponent,
+    LoginRealtorComponent,
 
   ],
   imports: [

@@ -1,0 +1,17 @@
+<button mat-button [routerLink]="['']">Retour</button>
+<form [formGroup]="loginRealtorForm" (submit)="submit()">
+    <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput type="text" formControlName="email" required><br>
+        <mat-error>Veuillez remplir le champ</mat-error>
+    </mat-form-field><br>
+    <mat-form-field>
+        <mat-label >Password</mat-label>
+        <input matInput type="password" formControlName="password" required><br>
+        <mat-error>Veuillez remplir le champ</mat-error><br>
+    </mat-form-field><br>
+    <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+    </div>
+    <button mat-button type="submit" [disabled]="!loginRealtorForm.valid">Submit</button>
+</form>

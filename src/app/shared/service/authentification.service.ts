@@ -10,26 +10,26 @@ export class AuthentificationService {
 
   getRealtorLogin(data: any): Promise<any>{
     return new Promise((resolve, reject) => {
-      this.http.post('http://localhost:3000/realtor/login', data)
+      this.http.post('http://localhost:3000/realtors/login-realtor', data)
       .subscribe( {
         next: (token:any) => {
           localStorage.setItem('auth', token.token)
           resolve(token)
         },
-        error: () => reject,
+        error: (err) => reject(err),
       })
     })
   }
 
   getAdminLogin(data:any): Promise<any>{
     return new Promise((resolve, reject) => {
-      this.http.post('http://localhost:3000/admin/login', data)
+      this.http.post('http://localhost:3000/admin/login-admin', data)
       .subscribe(  {
         next: (token:any) => {
           localStorage.setItem('auth', token.token)
           resolve(token)
         },
-        error: () => reject,
+        error: (err) => reject(err),
       })
     })
   }
