@@ -29,7 +29,7 @@ export class LoginAdminComponent implements OnInit {
     })
     .catch(err => {
       console.error(err)
-      if(err.error?.errorMessage){
+      if(err.error?.message){
         this.errorMessage = err.error.message
       }else{
         this.errorMessage = "Erreur inattendue. Veuillez réessayer.";
