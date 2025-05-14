@@ -14,7 +14,7 @@ export class RealtorService {
       this.http.get('http://localhost:3000/realtors/list-realtors')
       .subscribe( {
         next: realtors => {resolve(realtors)},
-        error: () => reject,
+        error: (err) => reject(err),
       })
     })
   }
@@ -24,7 +24,7 @@ export class RealtorService {
       this.http.get('http://localhost:3000/' + `realtors/realtor/${id}`)
       .subscribe( {
         next: agentImmobilier => {resolve(agentImmobilier)},
-        error: () => reject,
+        error: (err) => reject(err),
       })
     })
   }
@@ -34,7 +34,7 @@ export class RealtorService {
       this.http.post('http://localhost:3000/realtors/' + 'add-realtors', data)
       .subscribe( {
         next: realtor => {resolve(realtor)},
-        error: () => reject,
+        error: (err) => reject(err),
       })
     })
   }
@@ -44,7 +44,7 @@ export class RealtorService {
       this.http.put('http://localhost:3000/' + `realtors/edit-realtor/${id}`, data)
       .subscribe( {
         next: realtor => {resolve(realtor)},
-        error: () => reject,
+        error: (err) => reject(err),
       })
     })
   }
@@ -54,7 +54,7 @@ export class RealtorService {
       this.http.delete('http://localhost:3000/' + `realtors/${id}`)
       .subscribe( {
         next: () => {resolve(true)},
-        error: () => reject,
+        error: (err) => reject(err),
       })
     })
   }
