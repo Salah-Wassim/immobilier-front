@@ -10,6 +10,8 @@ import { AdminService } from 'src/app/shared/service/admin.service';
 })
 export class EditAdminComponent implements OnInit {
 
+  errorMessage: string | null = null;
+
   id:number = 0
 
   adminForm = this.fb.group({
@@ -41,7 +43,14 @@ export class EditAdminComponent implements OnInit {
     .then(() => {
       this.router.navigate(['list-admins'])
     })
-    .catch(err => console.error(err))
+    .catch(err => {
+      console.error(err)
+      if (err.error?.message) {
+        this.errorMessage = err.error.message;
+      } else {
+        this.errorMessage = "Erreur inattendue. Veuillez réessayer.";
+      }
+    })
   }
 
 }

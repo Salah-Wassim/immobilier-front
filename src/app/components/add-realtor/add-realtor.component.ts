@@ -10,6 +10,8 @@ import { RealtorService } from 'src/app/shared/service/realtor.service';
 })
 export class AddRealtorComponent implements OnInit {
 
+  errorMessage: string | null = null;
+
   realtorForm = this.fb.group({
     name: ['', Validators.required],
     age: ['', Validators.required],
@@ -30,7 +32,14 @@ export class AddRealtorComponent implements OnInit {
     .then(() => {
       this.router.navigate(['/realtors/list-realtor'])
     })
-    .catch(err => console.log(err))
+    .catch(err => {
+      console.log(err)
+      if(err.error?.message){
+        this.errorMessage = err.error.message
+      }else{
+        this.errorMessage = "Erreur inattendue. Veuillez réessayer.";
+      }
+    })
   }
   
 }
