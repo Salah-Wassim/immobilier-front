@@ -11,4 +11,7 @@
         <mat-error>Required</mat-error>
     </mat-form-field><br>
     <button mat-button type="submit" [disabled]="!adminForm.valid">Editer</button>
+    <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+    </div>
 </form>
