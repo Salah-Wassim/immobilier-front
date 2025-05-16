@@ -40,6 +40,7 @@ import { AddAdminComponent } from './components/add-admin/add-admin.component';
 import { LoginAdminComponent } from './components/login-admin/login-admin.component';
 import { LoginRealtorComponent } from './components/login-realtor/login-realtor.component';
 import { DetailRealtorComponent } from './components/detail-realtor/detail-realtor.component';
+import { DetailAdminComponent } from './components/detail-admin/detail-admin.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +68,7 @@ import { DetailRealtorComponent } from './components/detail-realtor/detail-realt
     LoginAdminComponent,
     LoginRealtorComponent,
     DetailRealtorComponent,
+    DetailAdminComponent,
 
   ],
   imports: [

@@ -22,6 +22,7 @@ import { ListAdminsComponent } from './components/list-admins/list-admins.compon
 import { LoginAdminComponent } from './components/login-admin/login-admin.component';
 import { LoginRealtorComponent } from './components/login-realtor/login-realtor.component';
 import { DetailRealtorComponent } from './components/detail-realtor/detail-realtor.component';
+import { DetailAdminComponent } from './components/detail-admin/detail-admin.component';
 
 
 const routes: Routes = [
@@ -44,6 +45,7 @@ const routes: Routes = [
   {'path':'edit-admin/:id', 'component':EditAdminComponent},
   {'path':'realtors/edit-realtor/:id', 'component':EditRealtorComponent},
   {'path':'detail/:id', 'component': DetailAnnonceComponent},
+  {'path':'detail-admin/:id', 'component': DetailAdminComponent},
   {'path':'profil/:id', 'component': DetailRealtorComponent},
   {'path':'login-admin', 'component':LoginAdminComponent},
   {'path':'login-realtor', 'component':LoginRealtorComponent}
