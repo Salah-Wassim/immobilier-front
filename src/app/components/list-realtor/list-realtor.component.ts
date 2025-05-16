@@ -21,10 +21,4 @@ export class ListRealtorComponent implements OnInit {
     .then(agentImmobiliers => {this.agentImmobiliers = agentImmobiliers})
     .catch(err => console.log(err))
   }
-
-  delete(id:number): void{
-    this.realtorService.getDeleteAgentImmobilier(id)
-    .then(() => {this.getAgentImmobilier()})
-    .catch(err => console.log(err))
-  }
 }

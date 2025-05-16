@@ -1,0 +1,7 @@
+<button mat-button [routerLink]="['/realtors/list-realtor']">Retour</button>
+
+<p>Nom : {{ agentImmobilier?.name }}</p>
+<p>Email : {{ agentImmobilier?.email }}</p>
+<p>Télephone : {{ agentImmobilier?.phoneNumber }}</p>
+
+<button mat-button [routerLink]="['/realtors/edit-realtor', agentImmobilier.id]">Editer</button>
