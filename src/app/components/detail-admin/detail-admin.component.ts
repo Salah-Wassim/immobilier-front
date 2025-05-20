@@ -10,7 +10,7 @@ import { AdminService } from 'src/app/shared/service/admin.service';
 export class DetailAdminComponent implements OnInit {
 
   id:number = 0
-  admin:any = []
+  admin:any = {}
 
   constructor(private route: ActivatedRoute, private adminService: AdminService) {
     this.route.params

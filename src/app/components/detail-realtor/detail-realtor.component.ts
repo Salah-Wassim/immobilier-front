@@ -10,7 +10,7 @@ import { RealtorService } from 'src/app/shared/service/realtor.service';
 export class DetailRealtorComponent implements OnInit {
 
   id: number = 0
-  agentImmobilier: any = [];
+  agentImmobilier: any = {};
 
   constructor(private realtorService: RealtorService, private route: ActivatedRoute) {
     this.route.params

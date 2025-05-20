@@ -3,4 +3,6 @@
 <p>Nom : {{ admin?.name }}</p>
 <p>Email : {{ admin?.email }}</p>
 
-<button mat-button [routerLink]="['/edit-admin', admin.id]">Editer</button>
+<div *ngIf="admin && admin.id">
+    <button *appCanEdit="admin" mat-button [routerLink]="['/edit-admin', admin.id]">Editer</button>
+</div>

@@ -4,4 +4,6 @@
 <p>Email : {{ agentImmobilier?.email }}</p>
 <p>Télephone : {{ agentImmobilier?.phoneNumber }}</p>
 
-<button mat-button [routerLink]="['/realtors/edit-realtor', agentImmobilier.id]">Editer</button>
+<div *ngIf="agentImmobilier && agentImmobilier.id">
+    <button *appCanEdit="agentImmobilier" mat-button [routerLink]="['/realtors/edit-realtor', agentImmobilier.id]">Editer</button>
+</div>
