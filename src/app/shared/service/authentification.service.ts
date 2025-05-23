@@ -1,13 +1,17 @@
 import { HttpClient } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { UserPattern } from '../model/user-pattern';
+import { tap, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthentificationService {
+
+  private currentUserSubject = new BehaviorSubject<UserPattern | null>(null)
+  public currentUser$ = this.currentUserSubject.asObservable()
 
   constructor(private http:HttpClient) {}
 
@@ -39,12 +43,13 @@ export class AuthentificationService {
     })
   }
 
-  getCurrentUser(): Observable<UserPattern> {
+  loadUserFromToken(){
     const token = localStorage.getItem('auth');
-    const role = localStorage.getItem('role');
+    const role = localStorage.getItem("role");
 
-    if (!token || !role) {
-      throw new Error('Utilisateur non authentifié');
+    if(!token || !role){
+      this.currentUserSubject.next(null)
+      return of(null)
     }
 
     const headers = new HttpHeaders({
@@ -55,6 +60,14 @@ export class AuthentificationService {
       ? 'http://localhost:3000/admin/me'
       : 'http://localhost:3000/realtors/me';
 
-    return this.http.get<UserPattern>(endpoint, { headers });
+    return this.http.get<UserPattern>(endpoint, { headers })
+    .subscribe({
+      next: (user) => this.currentUserSubject.next(user),
+      error: () => this.currentUserSubject.next(null)
+    });
+  }
+
+  getCurrentUser(): Observable<UserPattern | null> {
+    return this.currentUser$
   }
 }

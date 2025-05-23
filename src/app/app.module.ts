@@ -41,6 +41,7 @@ import { LoginAdminComponent } from './components/login-admin/login-admin.compon
 import { LoginRealtorComponent } from './components/login-realtor/login-realtor.component';
 import { DetailRealtorComponent } from './components/detail-realtor/detail-realtor.component';
 import { DetailAdminComponent } from './components/detail-admin/detail-admin.component';
+import { CanEditDirective } from './shared/directive/can-edit.directive';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,10 @@ import { DetailAdminComponent } from './components/detail-admin/detail-admin.com
     LoginRealtorComponent,
     DetailRealtorComponent,
     DetailAdminComponent,
-
+    CanEditDirective
+  ],
+  exports: [
+    CanEditDirective
   ],
   imports: [
     BrowserModule,
