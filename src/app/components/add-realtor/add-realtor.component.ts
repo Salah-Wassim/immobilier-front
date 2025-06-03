@@ -18,8 +18,7 @@ export class AddRealtorComponent implements OnInit {
     email: ['', Validators.required],
     password: ['', Validators.required],
     picture: [''],
-    phoneNumber: ['', Validators.required],
-    roleAdmin: ['', Validators.required],
+    phoneNumber: ['', Validators.required]
   })
 
   constructor(private fb: FormBuilder, private router: Router, private realtorService: RealtorService ) { }

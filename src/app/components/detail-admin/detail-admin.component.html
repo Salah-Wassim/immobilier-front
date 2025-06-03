@@ -1,0 +1,8 @@
+<button mat-button [routerLink]="['/list-admins']">Retour</button>
+
+<p>Nom : {{ admin?.name }}</p>
+<p>Email : {{ admin?.email }}</p>
+
+<div *ngIf="admin && admin.id">
+    <button *appCanEdit="admin" mat-button [routerLink]="['/edit-admin', admin.id]">Editer</button>
+</div>

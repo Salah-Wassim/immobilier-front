@@ -1,0 +1,10 @@
+<button mat-button [routerLink]="['/realtors/list-realtor']">Retour</button>
+
+<p>Nom : {{ agentImmobilier?.name }}</p>
+<p>Email : {{ agentImmobilier?.email }}</p>
+<p>Télephone : {{ agentImmobilier?.phoneNumber }}</p>
+
+<div *ngIf="agentImmobilier && agentImmobilier.id">
+    <button *appCanEdit="agentImmobilier" mat-button [routerLink]="['/realtors/edit-realtor', agentImmobilier.id]">Editer</button>
+    <button *appCanEdit="agentImmobilier" mat-button color="warn" (click)="delete(agentImmobilier.id)">Supprimer</button>
+</div>

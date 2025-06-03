@@ -1,6 +1,5 @@
 <button mat-button [routerLink]="['/add-realtors']">Ajouter un agent</button>
 <div *ngFor="let agentImmobilier of agentImmobiliers">
     {{ agentImmobilier.name }}
-    <button mat-button color="warn" (click)="delete(agentImmobilier.id)" >Delete</button>
-    <button mat-button [routerLink]="['/realtors/edit-realtor', agentImmobilier.id]">Editer</button>
+    <button mat-button [routerLink]="['/profil', agentImmobilier.id]">Voir le profil</button>
 </div>
