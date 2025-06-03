@@ -33,14 +33,5 @@
         <input matInput formControlName="phoneNumber" type="number"  id="phoneNumber" required>
         <mat-error>Required</mat-error>
     </mat-form-field><br>
-    <mat-label>Role Admin: </mat-label>
-    <mat-radio-group formControlName="roleAdmin" required>
-        <mat-radio-button [value]="true">
-            oui
-        </mat-radio-button>
-        <mat-radio-button [value]="false">
-            non
-        </mat-radio-button>
-    </mat-radio-group><br>
     <button mat-button type="submit" [disabled]="!realtorForm.valid">Ajouter</button>
 </form>

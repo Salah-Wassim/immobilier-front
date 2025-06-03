@@ -6,4 +6,5 @@
 
 <div *ngIf="agentImmobilier && agentImmobilier.id">
     <button *appCanEdit="agentImmobilier" mat-button [routerLink]="['/realtors/edit-realtor', agentImmobilier.id]">Editer</button>
+    <button *appCanEdit="agentImmobilier" mat-button color="warn" (click)="delete(agentImmobilier.id)">Supprimer</button>
 </div>

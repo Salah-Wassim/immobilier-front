@@ -24,14 +24,13 @@ export class CanEditDirective {
 
     this.authentificationService.getCurrentUser()
     .subscribe(user => {
-      
       if(!user?.id || !this.targetUser?.id){
         console.warn("Les données ne sont pas prêtes")
         this.viewContainer.clear();
         return;
       }
   
-      const canEdit = user && user.id === this.targetUser.id;
+      const canEdit = user && user.id === this.targetUser.id && user.role === this.targetUser.role;
 
       if(canEdit){
         this.viewContainer.createEmbeddedView(this.templateRef);

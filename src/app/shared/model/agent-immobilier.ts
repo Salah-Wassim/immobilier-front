@@ -5,7 +5,7 @@ export class AgentImmobilier {
     password: string;
     picture: string;
     phoneNumber: number;
-    roleAdmin: boolean;
+    role: string;
 
     constructor(agentImmobilier?:any){
         this.name = agentImmobilier.name || '';
@@ -14,6 +14,6 @@ export class AgentImmobilier {
         this.password = agentImmobilier.password || '';
         this.picture = agentImmobilier.picture || '';
         this.phoneNumber = agentImmobilier.phoneNumber || 0
-        this.roleAdmin = agentImmobilier.roleAdmin || false;
+        this.role = agentImmobilier.role || '';
     }
 }
